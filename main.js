@@ -35,10 +35,10 @@ console.log(name); //출력되지않음
 
 //4.데이터 타입
 //primitive(더이상 작은 단위로 나뉠수 x) : number, string, boolean, null, undefined
-//값value 자체가 메모리에 저장되고 값이 변할수 없음 Immutable
+//값 value 자체가 메모리에 저장되고 값이 변할수 없음 Immutable
 //object, box containter : single 아이템을 단위로 묶어 box로 관리할수있게 하는것
 //오브젝트는 너무 커서 메모리에 한번이 올라갈 수 없음. 레퍼런스를 통해 오브젝트가 담겨있는 메모리를 가리키게됨
-// 오브젝트는 value대신reference가 저장. Mutable
+// 오브젝트는 value대신 reference가 저장. Mutable
 //자바스트립는 펑션도 데이터타입중 하나. 펑션도 변수에 할당,인자로도 전달,리턴타입으로 리턴가능 ~일급객체
 
 //c언어는 low level function. 변수 할당하며 메모리 관리 가능. 얼마나 큰 데이터를 담을지에 따라 

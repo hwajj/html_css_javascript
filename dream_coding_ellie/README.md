@@ -1,1 +1,1 @@
-# javascript
+# 엘리 js 강의듣고 따라 정리

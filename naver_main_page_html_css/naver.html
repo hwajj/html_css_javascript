@@ -1,0 +1,86 @@
+<html lang="en">
+<!--head: 웹페이지가 어떤 언어로 되어있는지, 제목 등등 문서에 대한부분-->
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>네이버</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./naver.css">
+</head>
+<!--body : -->
+<body>
+    <header>
+        <div id="header-center">
+            <!--부모태그 header를 기준으로 div가 가운데정렬
+                마진:0 오토; //가운데정렬하라
+            속성명:속성값; 속성명2:속성값2;-->
+            <div>
+                <!--text는 span으로, div display: inline-block
+                    inline은 자기컨텐츠만큼만.. inline-block은 width height 지정가능-->
+                <span>네이버를 시작페이지로</span>
+                <span>쥬니어네이버</span>
+                <span>해피빈</span>
+            </div>
+            <div id="header-search">
+                <h1>
+                    <a href="https://www.naver.com"></a>
+                </h1>
+                <h2 class="blind">검색창</h2>
+                <fieldset>
+                    <legend class="blind">검색</legend>
+                    <input/>
+                    <button class="blind">검색</button>
+                </fieldset>
+        <!--inputType , radio는 그룹으로 묶여있음을 나타낼수있음 하나만 선택할수있음
+        center가 쓰인 강의는 버려라-->
+            </div>
+        </div>
+    </header>
+    <nav style="font-family:myfont">
+        <ul>
+            <li>메일</li>
+            <li>카페</li>
+            <li>블로그</li>
+            <li>지식인</li>
+            <li>쇼핑</li>
+            <li>네이버페이</li>
+            <li>네이버쇼핑</li>
+        </ul>
+    </nav>
+    <main>
+        <h2>실시간검색어</h2>
+        <h3>연합뉴스</h3>
+        <ol>
+            <li>속보) 그많던 빵을 다먹었어</li>
+            <li>충격) 배가 덜 부르다</li>
+            <li>코코들 보고싶다</li>
+        </ol>
+
+        <h3>언론사목록</h3>
+        <ul>
+            <li><img src="./press/국민일보.png" alt="국민일보"></li>
+            <li><img src="./press/프레시안.png" alt="프레시안"></li>
+            <li><img src="./press/동아일보.png" alt="동아일보"></li>
+            <li><img src="./press/머니투데이.png" alt="머니투데이"></li>
+            <li><img src="./press/서울경제.png" alt="서울경제"></li>
+            <li><img src="./press/이데일리.png" alt="이데일리"></li>
+            <li><img src="./press/중앙일보.png" alt="중앙일보"></li>
+            <li><img src="./press/파이낸셜뉴스.png" alt="파이낸셜뉴스"></li>
+            <li><img src="./press/매경.png" alt="매경"></li>
+            <li><img src="./press/한겨레.png" alt="한겨레"></li>
+            <li><img src="./press/한국경제.png" alt="한국경제"></li>
+            <li><img src="./press/헤럴드경제.png" alt="헤럴드경제"></li>
+        </ul>
+        <h3>로그인</h3>
+        <h3>뉴스</h3>
+        <h3>법률</h3>
+        <h3>쇼핑</h3>
+        <h6>쇼핑</h6>
+    </main>
+    <footer>
+        <div>공지사항</div>
+        <div>Creators</div>
+        <div>회사소개</div>
+    </footer>
+</body>
+</html>

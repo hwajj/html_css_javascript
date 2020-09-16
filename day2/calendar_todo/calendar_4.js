@@ -1,6 +1,9 @@
 function reshowingList(){
+<<<<<<< HEAD
   let fruits = ['banana','apple'];
 array
+=======
+>>>>>>> 626c6baa2b79d92d061b42235ed5462706e07eaf
     keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate();
     if(todoList[keyValue] === undefined){
         inputList.textContent = '';

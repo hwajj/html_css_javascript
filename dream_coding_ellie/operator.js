@@ -173,6 +173,7 @@ function printAll(...args) {
 }
 printAll('dream', 'coding', 'ellie'); 
 //인자를 3개 넣었으니 드림,코딩,엘리가 담긴 배열형태로 함수에 전달
+//세가지방법 모두 같이 배열
 
 //5. local scope    
 let globalMessage='global';

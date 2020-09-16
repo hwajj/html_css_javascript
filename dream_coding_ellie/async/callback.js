@@ -42,7 +42,7 @@ class UserStorage{
             }
         },2000);
     }
-    getRoles(user,onSuccess,onError) {
+    getRoles(user,onSuccess , onError) {
         setTimeout(()=>{
             if (user === 'ellie') {
                 onSuccess({name : 'ellie', role : 'admin'});

@@ -117,4 +117,13 @@ for(value of array) {
 //7.fun cloning
 //Object.assign(dest, [obj1,obj2,obj3...])
 const user = {name:'ellie', age:'20'};
+//user에는 레퍼런스가 저장, 
 const user2 = user;
+console.log(user);
+
+//old way
+const user3 = {};
+for(key)
+
+const user3
+Object.assign(user)

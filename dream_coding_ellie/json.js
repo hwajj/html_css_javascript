@@ -4,16 +4,16 @@
 let json = JSON.stringify(true);
 console.log; //true
 
-json = JSON.stringify(['apple','banana']);
+json = JSON.stringify(['apple', 'banana']);
 console.log(json); //["apple","banana"] json의 양식으로 
 
 //2.JSON to Object
 
 const rabbit = {
     name: 'tori',
-    color:'white',
+    color: 'white',
     size: null,
-    birthDate : new Date(),
+    birthDate: new Date(),
     jump: () => {
         console.log(`${name} can jump`);
     },
@@ -32,20 +32,20 @@ console.log(json);
 //json으로 전환되면서 birthDate가 String 형태로.
 
 
-json = JSON.stringify(rabbit, ['name']);//내가 원하는 property만 ..
+json = JSON.stringify(rabbit, ['name']); //내가 원하는 property만 ..
 console.log(json); //{"name":"tori"}
 
 //replacer로 키와 밸류대신에 콜백함수를
-json = JSON.stringify(rabbit, (key,value) =>{
+json = JSON.stringify(rabbit, (key, value) => {
     console.log(`key: ${key} , value : ${value}`)
-    return value ;
+    return value;
 
 });
 //최상의 키와 밸류는 오브재트
 
-json = JSON.stringify(rabbit, (key,value) =>{
+json = JSON.stringify(rabbit, (key, value) => {
     console.log(`key: ${key} , value : ${value}`)
-    return key==='name'? 'ellie': value ;
+    return key === 'name' ? 'ellie' : value;
 
 });
 //이름을 엘리로 수정가능~ 세밀하게 통제간으
@@ -53,7 +53,7 @@ json = JSON.stringify(rabbit, (key,value) =>{
 
 //2. JSON to Object
 
-json = JSON.stringify(rabbit); 
+json = JSON.stringify(rabbit);
 const obj = JSON.parse(json);
 
 //이미 제이슨으로 만들어져서 birthDate가 String인것을
@@ -71,8 +71,8 @@ console.log(rabbit.birthDate.getDate()); //오늘날짜출력
 //그래서 String 그자체이므로 날짜가 출력안됨
 console.log(obj.birthDate); // 2020-09-14T17:08:23.555Z
 
-const obj2 = JSON.parse(json, (key,value)=>{
-    return key ==='birthDate'? new Date(value): value;
+const obj2 = JSON.parse(json, (key, value) => {
+    return key === 'birthDate' ? new Date(value) : value;
 
 });
 console.log(obj2.birthDate.getDate());

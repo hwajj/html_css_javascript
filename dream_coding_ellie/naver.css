@@ -1,4 +1,4 @@
-.blind{
+.blind {
     position: absolute;
     overflow: hidden;
     clip: rect(0 0 0 0);
@@ -7,12 +7,12 @@
     height: 1px;
 }
 
-#header-center{
-    margin:0 auto;
+#header-center {
+    margin: 0 auto;
     width: 1080px;
 }
 
-#header-search > h1 {
+#header-search>h1 {
     width: 198px;
     height: 48;
     display: inline-block;
@@ -22,7 +22,7 @@
     display: none;
 }
 
-#header-search fieldset{
+#header-search fieldset {
     width: 520px;
     display: inline-block;
 }

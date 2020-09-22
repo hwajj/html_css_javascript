@@ -1,13 +1,13 @@
 'use strict';
 //logical operators: ||, &&, !
 const value1 = false;
-const value2 = 4<2; //false;
+const value2 = 4 < 2; //false;
 
 // || : 셋중 하나만 트루면 트루
 console.log(`or : ${value1 || value2 || check() }`) //심플한걸 앞에 놓기
 
 function check() {
-    for (let i = 0; i<10; i++) {
+    for (let i = 0; i < 10; i++) {
         //wasting time
         console.log('');
     }
@@ -27,8 +27,12 @@ console.log(stringFive === numberFive); //false
 
 //오브젝트는 레퍼런스 형태로 저장된다. (primitive는 값이 저장되고 object는 reference가 저장)
 
-const ellie1 = {name: 'ellie'};
-const ellie2 = {name: 'ellie'};
+const ellie1 = {
+    name: 'ellie'
+};
+const ellie2 = {
+    name: 'ellie'
+};
 const ellie3 = ellie1;
 console.log(ellie1 == ellie2); //ellie1 ,ellie2는 각각 다른 레퍼런스 저장 ~ 서로 다름
 console.log(ellie1 === ellie2); //레퍼런스가 달라서 false
@@ -46,7 +50,7 @@ console.log(null == undefined); //false
 
 // if
 const name = 'coder';
-if(name === 'coder') {
+if (name === 'coder') {
     console.log('hello, coder');
 } else if (name === 'hwajj') {
     console.log('You are amazing coder');
@@ -56,12 +60,12 @@ if(name === 'coder') {
 
 // Ternary operator : ?
 // condition ? value1 : value2
-console.log(name === 'coder'? 'yes' : 'no');
+console.log(name === 'coder' ? 'yes' : 'no');
 
 //switch(else if 반복되는 경우 사용하면 효과적)
 //타입스크립트에서 정해진 타입 검사하거나 이넘 비슷한 아이를 검사할때???
 const brower = 'IE';
-switch(brower) {
+switch (brower) {
     case 'IE':
         console.log('go away');
         break;
@@ -76,7 +80,7 @@ switch(brower) {
 }
 //while
 let i = 3;
-while (i>0) {
+while (i > 0) {
     console.log(`while: ${i}`);
     i--;
 }
@@ -85,40 +89,40 @@ while (i>0) {
 do {
     console.log(`do while: ${i}`);
     i--;
-} while(i >0); 
+} while (i > 0);
 
 
 //for(begin; condition; step)
-for(i = 3; i > 0; i--){ //let i = 3 이라고 써서 내부에 변수 선언할수
+for (i = 3; i > 0; i--) { //let i = 3 이라고 써서 내부에 변수 선언할수
     console.log(`for: ${i}`)
 }
 
 //nested loops
-for(let i = 0; i < 10; i++){
-    for(let j = 0; j < 10; j++) {
+for (let i = 0; i < 10; i++) {
+    for (let j = 0; j < 10; j++) {
         console.log(`i: ${i} j: ${j}`)
-    } 
-}    
+    }
+}
 //  빅오가 n의 2승 ~cpu에 좋지않아 피하는것이 좋다
 
 //break, continue
 //continue로 짝수만 출력
-for(let i = 0; i <11; i++){
-    if(i%2 != 0) {
+for (let i = 0; i < 11; i++) {
+    if (i % 2 != 0) {
         continue;
-    } 
+    }
     console.log(`${i}`);
-    
+
 }
- 
+
 //break 으로 8까지 출력
-for(let i = 0; i <11; i++){
+for (let i = 0; i < 11; i++) {
     if (i > 8) {
         break;
     }
     console.log(`${i}`);
 }
- 
+
 //5강
 
 //1.function
@@ -145,17 +149,19 @@ log('hellohello');
 
 //2. Parameters
 
-function changeName(obj){
+function changeName(obj) {
     obj.name = 'coder';
 }
-const ellie = {name : 'ellie'};
+const ellie = {
+    name: 'ellie'
+};
 console.log(ellie); //{name : 'ellie'} 출력
-changeName(ellie);  //name을 coder로 저장
+changeName(ellie); //name을 coder로 저장
 console.log(ellie); //{name : 'coder'} 출력
 
 
 //3.Default Parameters (es6에서 추가)
-function showMessage(message, from='unknown') {
+function showMessage(message, from = 'unknown') {
     console.log(`${message} by ${from}`);
 }
 showMessage('Hi');
@@ -163,51 +169,53 @@ showMessage('Hi');
 //4.Rest Parameters (+es6)
 //...가 배열형태로 전달한다는 뜻
 function printAll(...args) {
-    for(let i = 0; i < args.length; i++) {
+    for (let i = 0; i < args.length; i++) {
         console.log(args[i]);
-    } 
-    for(const arg of args) {
+    }
+    for (const arg of args) {
         console.log(arg);
     }
-    args.forEach((arg)=> console.log(arg));
+    args.forEach((arg) => console.log(arg));
 }
-printAll('dream', 'coding', 'ellie'); 
+printAll('dream', 'coding', 'ellie');
 //인자를 3개 넣었으니 드림,코딩,엘리가 담긴 배열형태로 함수에 전달
 //세가지방법 모두 같이 배열
 
 //5. local scope    
-let globalMessage='global';
-function printMessage(){
+let globalMessage = 'global';
+
+function printMessage() {
     let message = 'hello';
     console.log(message);
     console.log(globalMessage);
-    function printAnother(){
+
+    function printAnother() {
         console.log(message);
         let childMessage = 'hello';
     }
-   //console.log(childMessage); //밖에선 안을 볼수 없어 unde fined
+    //console.log(childMessage); //밖에선 안을 볼수 없어 unde fined
 }
 printMessage();
 
 //6.retrun value
 
-function sum(a,b) {
-    return a+b;
+function sum(a, b) {
+    return a + b;
 }
 
-const result = sum(1,2);
+const result = sum(1, 2);
 
 //7. Early return, early exit 리턴을 앞쪽에 써야
 //bad , {} 안에서 로직작성하면 가독성 떨어진다
 function upgradeUser(user) {
-    if(user.point >10) {
+    if (user.point > 10) {
         //long upgrade logic
     }
 }
 
 //good , 조건이 안맞을때는 빨리 return하고 나와서 로직 쓰는게 맞다
 function upgradeUser(user) {
-    if(user.point <= 10) {
+    if (user.point <= 10) {
         return;
     }
     //long upgrade logic
@@ -217,14 +225,14 @@ function upgradeUser(user) {
 //hoisting 이 됨
 //변수에 할당, 파라미터로 전달, 리턴
 
-const print = function(){
+const print = function () {
     console.log('print');
-}; 
+};
 print();
 const printAgain = print; //함수를 변수에 할당
 printAgain(); // print출력
 const sumAgain = sum;
-console.log(sumAgain(1,3));
+console.log(sumAgain(1, 3));
 
 //2.callback function using function expression
 //printYes, printNo함수가 매개변수로 들어감
@@ -236,11 +244,11 @@ function randomQuiz(answer, printYes, printNo) {
     }
 }
 
-const printYes = function() {
+const printYes = function () {
     console.log('yes!');
 };
 
-const printNo = function() {
+const printNo = function () {
     console.log('no!');
 };
 randomQuiz('wrong', printYes, printNo);
@@ -254,7 +262,7 @@ randomQuiz('I love you', printYes, printNo);
 //     console.log('simplePrint!');
 // };
 const simplePrint = () => console.log('simplePrint!');
-const add = (a,b) => a + b;
+const add = (a, b) => a + b;
 // const add = function (a,b) {
 //     return a+b;
 // }
@@ -262,8 +270,8 @@ const add = (a,b) => a + b;
 
 const simpleMultify = (a, b) => {
     //do something more
-    return a + b;
-;}
+    return a + b;;
+}
 //블록을 씌우면 return써줘야 
 
 //IIFE Immediately Invoked Function Expression

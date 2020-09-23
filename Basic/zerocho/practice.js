@@ -1,5 +1,3 @@
-console.log('hi');
-//끝말잇기
 //별찍기
 for (var star = 1; star <= 9; star += 2) {
     console.log(" ".repeat((9 - star) / 2) + "*".repeat(star) + " ".repeat((9 - star) / 2));
@@ -68,7 +66,7 @@ console.log(네로.이름);
 //         }
 //     }
 // }
-
+/* 구구단 */
 var bodyy = document.body;
 var 단어 = document.createElement('div');
 단어.textContent = '화정';
@@ -109,36 +107,45 @@ document.body.append(결과창);
     }
 }); //function 이 콜백함수
 
+/* 구구단 */
 
 var br = document.createElement('br');
 bodyy.append(br);
-var 구구단 = document.createElement('div');
+
+
 var 숫자1 = Math.ceil(Math.random() * 9);
 var 숫자2 = Math.ceil(Math.random() * 9);
+var 결과 = 숫자1 * 숫자2;
 
-
+var 구구단 = document.createElement('div');
 구구단.textContent = String(숫자1) + '곱하기' + String(숫자2) + '는?';
-
-
 document.body.append(구구단);
 
 var 구구단폼 = document.createElement('form'); //html안에 form넣고
-구구단.append(구구단폼); //body밑에 넣는다
-var 구구단정답입력창 = document.createElement('input'); //html안에 input넣고
-// 구구단정답입력창.type = 'number';
-구구단폼.append(구구단정답입력창); //입력창은 form 밑에 넣는다
-var 구구단정답버튼 = document.createElement('button');
-구구단정답버튼.textContent = '정답입력';
-구구단폼.append(구구단정답버튼); //폼안에 버튼
-var 구구단결과 = document.createElement('div');
-구구단.append(구구단결과);
+document.body.append(구구단폼); //body밑에 넣는다
 
+var 구구단정답입력창 = document.createElement('input'); //html안에 input넣고
+구구단폼.append(구구단정답입력창); //입력창은 form 밑에 넣는다
+
+var 구구단정답버튼 = document.createElement('button');
+구구단정답버튼.textContent = '입력';
+구구단폼.append(구구단정답버튼); //폼안에 버튼
+
+var 구구단결과 = document.createElement('div');
+document.body.append(구구단결과);
+구구단결과.textContent = '결과창';
+console.log(구구단결과.textContent);
+구구단결과.textContent = 구구단정답입력창.textContent;
 
 구구단폼.addEventListener('submit', function 콜백함수(이벤트) { //이벤트를 매개변수로 
+    이벤트.preventDefault();
     //엔터를 쳤을때 새로고침이 되는것을 방지
-    이벤트.preventDefault(); //submit의 기본동작인 새로고침 방지
-    if (숫자1 * 숫자2 === Number(구구단정답입력창.value)) {
+    if (결과 === Number(구구단정답입력창.value)) {
         구구단결과.textContent = '딩동댕'; //맞게쓰면 딩동댕
+        숫자1 = Math.ceil(Math.random() * 9);
+        숫자2 = Math.ceil(Math.random() * 9);
+        결과 = 숫자1 * 숫자2;
+        구구단.textContent = String(숫자1) + '곱하기' + String(숫자2) + '는?';
         구구단정답입력창.value = ""; //글씨를 삭제
         구구단정답입력창.focus(); //입력란에 클릭안해도 커서가 깜빡이도록
     } else {
